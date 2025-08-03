@@ -17,8 +17,16 @@ body {
   color: #eaeaea;
   transition: background-color 0.5s ease, color 0.5s ease;
   scroll-behavior: smooth;
+
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
 }
 
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
 /* اتجاه الصفحة حسب اللغة */
 html[lang="ar"] {
   direction: rtl;
@@ -260,3 +268,4 @@ footer {
   border-top: 1px solid #444;
   font-family: 'Cairo', sans-serif;
 }
+
