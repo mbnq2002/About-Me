@@ -27,6 +27,8 @@ body {
     opacity: 1;
   }
 }
+
+
 /* اتجاه الصفحة حسب اللغة */
 html[lang="ar"] {
   direction: rtl;
@@ -56,7 +58,6 @@ html[lang="en"] {
 }
 
 /* الحاوية الرئيسية */
-/* الحاوية الرئيسية */
 .container {
   max-width: 1000px;
   margin: auto;
@@ -67,6 +68,7 @@ html[lang="en"] {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.51);
   color: #fff;
 }
+
 /* الصورة الشخصية */
 .profile-img {
   display: block;
@@ -268,5 +270,3 @@ footer {
   border-top: 1px solid #444;
   font-family: 'Cairo', sans-serif;
 }
-
-
