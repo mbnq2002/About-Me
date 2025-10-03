@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- لضبط عرض الصفحة تلقائيًا حسب حجم شاشة الجهاز (هام للتجاوب مع الأجهزة المختلفة) -->
 
-  <title>محمد بن نواف</title>
+  <title> محمد بن نواف </title>
   <!-- عنوان الصفحة الذي يظهر في تبويب المتصفح -->
 
   <link rel="stylesheet" href="styles.css"/>
@@ -22,7 +22,7 @@
     /* كائن يحتوي على النصوص باللغتين العربية والانجليزية لاستخدام التبديل بين اللغات */
     const translations = {
       ar: { // النصوص باللغة العربية
-        name: "محمد بن نواف ",
+        name: "محمد بن نواف",
         title: "نظم المعلومات",
         phoneText: 'الهاتف: <a href="tel:+966566833453">+966 56 683 3453</a>',
         
@@ -30,11 +30,12 @@ whatsappText: 'واتساب: <a href="https://wa.me/966566833453" target="_blank
 linkedinText: 'لينكد إن:  <a href="https://www.linkedin.com/in/%D9%85%D8%AD%D9%85%D8%AF-%D8%A8%D9%86-%D9%86%D9%88%D8%A7%D9%81-ba0aaa33a/" target="_blank" rel="noopener">linkedin.com</a>',
 
        emailText: 'البريد الإلكتروني: <a href="mailto:mbnq1@outlook.com">mbnq1@outlook.com</a>',
+summaryTitle: "نبذة عني",
 
-       
-        educationTitle: "التعليم",
+        summaryText: " بكالوريوس في نظم المعلومات، وأتمتع بخبرة عملية في تطوير الويب، والدعم الفني، وإدارة الأنظمة. شاركت في مشروع ابتكاري يربط بين المزارعين والعملاء بشكل مباشر، مما مكنني من تطوير مهارات فعّالة في العمل الجماعي، وتنظيم المهام، وحل المشكلات التقنية. أسعى دائمًا لتطوير قدراتي وتحقيق أفضل النتائج في بيئات العمل التعاونية والتقنية المتقدمة.",
+        educationTitle: "تعليمي",
 educationText: "حاصل على بكالوريوس نظم معلومات من كلية علوم الحاسب بجامعة الملك خالد بأبها.", 
-        certificationsTitle: "الشهادات",
+        certificationsTitle: "شهاداتي والدورات",
        certifications: [
   'شهادة احترافية في الأمن السبراني من IBM – <a href="https://www.credly.com/badges/924379c5-e2d9-48ad-8a89-c1a71818ff1c" target="_blank" rel="noopener">عرض الشهادة</a>',
 
@@ -49,7 +50,7 @@ educationText: "حاصل على بكالوريوس نظم معلومات من ك
 ],
     
 
-experienceTitle: "الخبرات",
+experienceTitle: "خبراتي",
 experienceHeader: 'تدربت في قسم تقنية المعلومات بالبنية الرقمية بأمانة منطقة عسير - <a href="https://drive.google.com/drive/folders/1sZsEu1suHLbzWc87aJNa1PJ-C5OFAarA?usp=drive_link" target="_blank" rel="noopener">عرض شهادة التدريب</a>',
 experienceOrg: '',  // يمكنك تركها فارغة إذا لا تريد نص إضافي أو تضع وصفًا آخر هنا
 
@@ -59,7 +60,7 @@ experienceItems: [
   "تعاونت مع فرق تقنية المعلومات واكتسبت خبرة في بيئة الدعم الفني."
 ],
 
-        projectsTitle: "المشاريع",
+        projectsTitle: "مشاريعي",
         projectHeader: 'مشروع التخرج – Agri Zone: منصة إلكترونية زراعية – <a href="https://drive.google.com/drive/folders/1Awg4Qz4o-EyDskIQMQ4urc5YpivzMlOz?usp=drive_link" target="_blank" rel="noopener">عرض الملفات</a>',
         projectItems: [
           "طورت و صممت منصة كاملة تربط المزارعين بالمستهلكين مباشرة.",
@@ -70,14 +71,15 @@ experienceItems: [
         languageSwitch: "English"  /* نص زر التبديل للغة */
       },
       en: { // النصوص باللغة الإنجليزية
-       name: "Mohammed Nawaf Al-Qahtani",
+       name: "Mohammed Nawaf",
 title: "Information Systems",
 phoneText: 'Phone: <a href="tel:+966566833453">+966 566 833 453</a>',
 whatsappText: 'WhatsApp: <a href="https://wa.me/966566833453" target="_blank" rel="noopener">+966 566 833 453</a>',
 linkedinText: 'LinkedIn: <a href="https://www.linkedin.com/in/%D9%85%D8%AD%D9%85%D8%AF-%D8%A8%D9%86-%D9%86%D9%88%D8%A7%D9%81-ba0aaa33a/" target="_blank" rel="noopener">linkedin.com</a>',
 
         emailText: 'Email: <a href="mailto:mbnq1@outlook.com">mbnq1@outlook.com</a>',
-
+summaryTitle: "About Me",
+summaryText: "I hold a Bachelor's degree in Information Systems and have hands-on experience in web development, IT support, and system administration. I participated in an innovative project connecting farmers directly with customers, which enabled me to develop effective teamwork, task organization, and technical problem-solving skills. I always strive to improve my capabilities and achieve the best results in collaborative and advanced technical environments.",
 educationTitle: "Education",
 educationText: "<strong>Bachelor’s degree in Information Systems</strong><br>College of Computer Science, King Khalid University in Abha.",
 certificationsTitle: "Certifications and Courses",
@@ -209,7 +211,7 @@ document.getElementById("footer-text").textContent =
       <!-- صورة الملف الشخصي -->
       <img src="profile (2).png" alt="صورة محمد نواف" class="profile-img">
       <!-- الاسم -->
-      <h1 id="name">محمد بن نواف </h1>
+      <h1 id="name">محمد نواف القحطاني</h1>
       <!-- العنوان الوظيفي أو التخصص -->
       <p id="title"></p>
       <!-- معلومات التواصل -->
@@ -222,7 +224,10 @@ document.getElementById("footer-text").textContent =
     </header>
 
     <!-- قسم ملخص نبذة عن الشخص -->
-
+    <section>
+      <h2 id="summary-title">نبذة احترافية | Professional Summary</h2>
+      <p id="summary-text"></p>
+    </section>
 
     <!-- قسم التعليم -->
     <section>
@@ -256,9 +261,6 @@ document.getElementById("footer-text").textContent =
 
 </body>
 </html>
-
-
-
 
 
 
