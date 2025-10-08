@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>محمد بن نواف </title>
+    <title>محمد بن نواف</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
     
     <style>
@@ -220,8 +220,6 @@
             top: 20px;
             right: 20px;
             z-index: 1000;
-            display: flex;
-            gap: 10px;
         }
 
         .control-btn {
@@ -265,51 +263,22 @@
                 align-items: center;
                 gap: 0.8rem;
             }
+            /* Adjust controls for smaller screens */
+            .controls {
+                top: 10px;
+                right: 10px;
+            }
+            .control-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
         }
         
-        /* --- ✨ NEW PRINT STYLES ✨ --- */
-        @media print {
-            body {
-                background-image: none;
-                background-color: #fff;
-                color: #000;
-            }
-            .container {
-                max-width: 100%;
-                margin: 0;
-                padding: 1cm;
-                border: none;
-                box-shadow: none;
-                backdrop-filter: none;
-                background-color: #fff;
-                border-radius: 0;
-            }
-            .controls, footer, .profile-img {
-                display: none;
-            }
-            header {
-                text-align: right;
-            }
-            h1, h2, h3, #title {
-                color: #000 !important;
-            }
-            section h2 {
-                border-bottom-color: #ccc;
-            }
-            a {
-                color: #000 !important;
-                text-decoration: none;
-            }
-            ul li::before {
-                color: #000;
-            }
-        }
     </style>
 </head>
 
 <body>
     <div class="controls">
-        <button id="print-button" class="control-btn"></button>
         <button id="lang-button" class="control-btn"></button>
     </div>
 
@@ -379,6 +348,7 @@
                     phone: 'الهاتف: <a href="tel:+966566833453">0566833453</a>',
                     email: 'البريد: <a href="mailto:mbnq1@outlook.com">mbnq1@outlook.com</a>',
                     linkedin: 'لينكد إن: <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">Linkedin.com</a>',
+                    experienceTitle: "الخبرة المهنية",
                     experienceHeader: "متدرب في تقنية المعلومات - البنية التحتية الرقمية، أمانة منطقة عسير (يونيو 2024 - أغسطس 2024)",
                     experienceItems: ["قدمت الدعم الفني وقمت بحل مشكلات الأجهزة والبرامج، مما ساهم في تقليل وقت التوقف عن العمل.", "ساعدت في إعداد الخوادم وتحسين أداء الشبكة بالتعاون مع فرق تقنية المعلومات.", "حللت بيانات الحوادث لتحديد المشكلات المتكررة وتحسين الأداء العام للنظام.", "دعمت عمليات الأمن السيبراني من خلال مراقبة الأنظمة وتحديد التهديدات المحتملة."],
                     educationTitle: "التعليم",
@@ -395,8 +365,7 @@
                     profSkills: ["مايكروسوفت أوفيس (Excel, Word, PowerPoint)", "كتابة وتحليل التقارير", "إدارة المشاريع", "تطوير الحلول التقنية"],
                     languagesTitle: "اللغات",
                     languages: ["العربية: اللغة الأم", "الإنجليزية: إتقان مهني"],
-                    langButton: "English",
-                    printButton: "طباعة 🖨️"
+                    langButton: "English"
                 },
                 en: {
                     name: "Mohammed Nawaf",
@@ -421,15 +390,13 @@
                     profSkills: ["Microsoft Office (Excel, Word, PowerPoint)", "Report Writing and Analysis", "Project Management", "Developing Technical Solutions"],
                     languagesTitle: "Languages",
                     languages: ["Arabic: Native", "English: Proficient"],
-                    langButton: "العربية",
-                    printButton: "Print 🖨️"
+                    langButton: "العربية"
                 }
             };
 
             const elements = {
                 html: document.documentElement,
                 langButton: document.getElementById("lang-button"),
-                printButton: document.getElementById("print-button"),
                 name: document.getElementById("name"),
                 title: document.getElementById("title"),
                 phone: document.getElementById("phone"),
@@ -509,7 +476,6 @@
             
             // Event Listeners
             elements.langButton.addEventListener("click", switchLanguage);
-            elements.printButton.addEventListener("click", () => window.print());
 
             // Initial Load
             const initialLang = localStorage.getItem("lang") || "ar";
@@ -518,8 +484,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
