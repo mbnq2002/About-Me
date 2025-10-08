@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>محمد بن نواف | سيرة ذاتية</title>
-
+    <title>محمد بن نواف </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
     
     <style>
-        /* استيراد الخط العربي */
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
 
-        /* متغيرات CSS لسهولة التعديل على الألوان */
         :root {
-            --primary-color: #ffd700; /* اللون الذهبي الرئيسي */
-            --secondary-color: #ffdd88; /* درجة أفتح من الذهبي */
-            --background-color: rgba(0, 0, 0, 0.75); /* لون خلفية الحاوية */
-            --text-color: #eaeaea; /* لون النص الأساسي */
-            --text-color-muted: #ccc; /* لون النص الثانوي */
+            --primary-color: #ffd700;
+            --secondary-color: #ffdd88;
+            --background-color: rgba(0, 0, 0, 0.75);
+            --text-color: #eaeaea;
+            --text-color-muted: #ccc;
             --border-color: rgba(255, 255, 255, 0.2);
             --shadow-color: rgba(0, 0, 0, 0.5);
             --hover-color: #ff9900;
         }
 
-        /* --- التنسيق العام --- */
         * {
             margin: 0;
             padding: 0;
@@ -35,12 +30,11 @@
         body {
             font-family: 'Cairo', sans-serif;
             line-height: 1.7;
-            background-image: url("2.jpeg"); /* تأكد من وجود صورة الخلفية بنفس المسار */
+            background-image: url("2.jpeg");
             background-size: cover;
-            background-attachment: fixed; /* لتثبيت الخلفية عند التمرير */
+            background-attachment: fixed;
             color: var(--text-color);
             scroll-behavior: smooth;
-            /* حركة ظهور الصفحة بالكامل */
             opacity: 0;
             animation: fadeIn 1s ease-in forwards;
         }
@@ -49,21 +43,18 @@
             to { opacity: 1; }
         }
 
-        /* ضبط اتجاه الصفحة حسب اللغة */
         html[lang="en"] { direction: ltr; }
         html[lang="ar"] { direction: rtl; }
 
-        /* --- الحاوية الرئيسية --- */
         .container {
             max-width: 1000px;
             margin: 2rem auto;
-            padding: clamp(1.5rem, 5vw, 2.5rem); /* مساحة داخلية مرنة */
+            padding: clamp(1.5rem, 5vw, 2.5rem);
             background-color: var(--background-color);
             backdrop-filter: blur(12px);
             border-radius: 20px;
             box-shadow: 0 8px 32px 0 var(--shadow-color);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            /* حركة ظهور المحتوى */
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 1.2s 0.3s ease-out forwards;
@@ -76,7 +67,6 @@
             }
         }
 
-        /* --- الترويسة والصورة الشخصية --- */
         header { text-align: center; }
 
         .profile-img {
@@ -109,12 +99,11 @@
             font-weight: 400;
         }
 
-        /* --- معلومات التواصل --- */
         .contact-info {
             display: flex;
-            flex-wrap: wrap; /* للسماح بالالتفاف على الشاشات الصغيرة */
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 1rem 2rem; /* مسافات بين العناصر */
+            gap: 1rem 2rem;
             margin-bottom: 2rem;
             font-size: clamp(1rem, 2.5vw, 1.1rem);
         }
@@ -135,7 +124,6 @@
             text-decoration: underline;
         }
         
-        /* --- الأقسام --- */
         section { margin-bottom: 2rem; }
 
         section h2 {
@@ -147,7 +135,6 @@
             position: relative;
         }
         
-        /* تأثير الخط المتحرك تحت العنوان */
         section h2::after {
             content: '';
             position: absolute;
@@ -165,21 +152,19 @@
             width: 70px;
         }
         
-        /* --- القوائم --- */
         ul {
-            list-style: none; /* إزالة النقاط الافتراضية */
+            list-style: none;
             padding: 0;
         }
 
         ul li {
             position: relative;
-            padding-inline-start: 25px; /* مسافة للرمز المخصص */
+            padding-inline-start: 25px;
             margin-bottom: 0.8rem;
             font-size: clamp(1rem, 3vw, 1.1rem);
             transition: color 0.3s ease, transform 0.3s ease;
         }
         
-        /* رمز مخصص للقائمة */
         ul li::before {
             content: '◆';
             position: absolute;
@@ -200,15 +185,46 @@
             transform: rotate(180deg);
         }
 
-        /* --- زر التحكم باللغة --- */
+        /* --- Skills Section Styles --- */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+        }
+        .skill-category h3 {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.25rem;
+        }
+        .skill-category ul {
+            padding: 0;
+            list-style: none;
+        }
+        .skill-category li {
+            margin-bottom: 0.5rem;
+            padding-inline-start: 0;
+        }
+        .skill-category li::before {
+            content: none;
+        }
+        /* --- End Skills Section --- */
+
         .controls {
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1000;
+            display: flex;
+            gap: 10px;
         }
 
-        #lang-button {
+        .control-btn {
             font-family: 'Cairo', sans-serif;
             font-size: 1rem;
             background-color: rgba(255, 255, 255, 0.8);
@@ -222,14 +238,13 @@
             font-weight: 600;
         }
 
-        #lang-button:hover {
+        .control-btn:hover {
             background-color: var(--hover-color);
             color: #fff;
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }
         
-        /* --- التذييل --- */
         footer {
             text-align: center;
             padding: 1.5rem 0;
@@ -240,7 +255,6 @@
             background-color: rgba(0,0,0,0.2);
         }
         
-        /* --- تصميم متجاوب --- */
         @media (max-width: 768px) {
             .container {
                 margin: 1rem;
@@ -252,12 +266,51 @@
                 gap: 0.8rem;
             }
         }
+        
+        /* --- ✨ NEW PRINT STYLES ✨ --- */
+        @media print {
+            body {
+                background-image: none;
+                background-color: #fff;
+                color: #000;
+            }
+            .container {
+                max-width: 100%;
+                margin: 0;
+                padding: 1cm;
+                border: none;
+                box-shadow: none;
+                backdrop-filter: none;
+                background-color: #fff;
+                border-radius: 0;
+            }
+            .controls, footer, .profile-img {
+                display: none;
+            }
+            header {
+                text-align: right;
+            }
+            h1, h2, h3, #title {
+                color: #000 !important;
+            }
+            section h2 {
+                border-bottom-color: #ccc;
+            }
+            a {
+                color: #000 !important;
+                text-decoration: none;
+            }
+            ul li::before {
+                color: #000;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="controls">
-        <button id="lang-button"></button>
+        <button id="print-button" class="control-btn"></button>
+        <button id="lang-button" class="control-btn"></button>
     </div>
 
     <div class="container">
@@ -266,9 +319,8 @@
             <h1 id="name"></h1>
             <p id="title"></p>
             <div class="contact-info">
-                <span id="phone"></span>
-                <span id="whatsapp"></span>
                 <span id="email"></span>
+                <span id="phone"></span>
                 <span id="linkedin"></span>
             </div>
         </header>
@@ -279,212 +331,204 @@
         </section>
 
         <section>
+            <h2 id="experience-title"></h2>
+            <p><strong id="experience-header"></strong></p>
+            <ul id="experience-list"></ul>
+        </section>
+
+        <section>
             <h2 id="education-title"></h2>
             <p id="education-text"></p>
+            <ul id="education-list"></ul>
         </section>
 
         <section>
             <h2 id="certifications-title"></h2>
             <ul id="certifications-list"></ul>
         </section>
-
+        
         <section>
-            <h2 id="experience-title"></h2>
-            <p><strong id="experience-header"></strong><br><span id="experience-org"></span></p>
-            <ul id="experience-list"></ul>
+            <h2 id="skills-title"></h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3 id="soft-skills-title"></h3>
+                    <ul id="soft-skills-list"></ul>
+                </div>
+                <div class="skill-category">
+                    <h3 id="tech-skills-title"></h3>
+                    <ul id="tech-skills-list"></ul>
+                </div>
+                <div class="skill-category">
+                    <h3 id="prof-skills-title"></h3>
+                    <ul id="prof-skills-list"></ul>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2 id="languages-title"></h2>
+            <ul id="languages-list"></ul>
         </section>
 
-        <section>
-            <h2 id="projects-title"></h2>
-            <p><strong id="project-header"></strong></p>
-            <ul id="project-list"></ul>
-        </section>
     </div>
 
     <footer id="footer-text"></footer>
 
     <script>
-        // دالة يتم تنفيذها عندما يكون محتوى الصفحة جاهزاً
         document.addEventListener("DOMContentLoaded", () => {
 
-            // 1. كائن الترجمة: يحتوي على النصوص باللغتين
             const translations = {
-                ar: { // النصوص باللغة العربية
+                ar: {
                     name: "محمد بن نواف",
-                    title: "نظم المعلومات | متخصص في الأمن السيبراني",
-                    phoneText: 'الهاتف: <a href="tel:+966566833453">+966 56 683 3453</a>',
-                    whatsappText: 'واتساب: <a href="https://wa.me/966566833453" target="_blank" rel="noopener noreferrer">+966 56 683 3453</a>',
-                    linkedinText: 'لينكد إن: <a href="https://www.linkedin.com/in/%D9%85%D8%AD%D9%85%D8%AF-%D8%A8%D9%86-%D9%86%D9%88%D8%A7%D9%81-ba0aaa33a/" target="_blank" rel="noopener noreferrer">linkedin.com</a>',
-                    emailText: 'البريد الإلكتروني: <a href="mailto:mbnq1@outlook.com">mbnq1@outlook.com</a>',
-                    summaryTitle: "نبذة عني",
-                    summaryText: "بكالوريوس في نظم المعلومات، وخبرة عملية في تطوير الويب، والدعم الفني، وإدارة الأنظمة. شاركت في مشروع ابتكاري يربط بين المزارعين والعملاء، مما مكنني من تطوير مهارات فعّالة في العمل الجماعي، وتنظيم المهام، وحل المشكلات. أسعى دائمًا لتطوير قدراتي وتحقيق أفضل النتائج في بيئات العمل التقنية المتقدمة.",
-                    educationTitle: "تعليمي",
-                    educationText: "<strong>بكالوريوس نظم معلومات</strong><br>كلية علوم الحاسب، جامعة الملك خالد بأبها.",
-                    certificationsTitle: "الشهادات والدورات",
-                    certifications: [
-                        'شهادة احترافية في الأمن السبراني من IBM – <a href="https://www.credly.com/badges/924379c5-e2d9-48ad-8a89-c1a71818ff1c" target="_blank" rel="noopener noreferrer">عرض الشهادة</a>',
-                        'اساسيات البيانات – <a href="https://www.credly.com/badges/6d783277-d59b-4e74-b68c-e37685ad998f" target="_blank" rel="noopener noreferrer">عرض الشهادة</a>',
-                        'أمن السحابة – <a href="https://www.credly.com/badges/58760621-df8f-45a0-af13-657126af68f2" target="_blank" rel="noopener noreferrer">عرض الشهادة</a>',
-                        'الحوكمة والمخاطر والامتثال وخصوصية البيانات – <a href="https://www.credly.com/badges/01b0e379-ba8d-4fec-b074-2a39f1b38563" target="_blank" rel="noopener noreferrer">عرض الشهادة</a>',
-                        'الاستجابة للحوادث وتحليل أنظمة الأدلة – <a href="https://www.credly.com/badges/8e04163c-9a8d-49d5-9bd1-90212f16278b" target="_blank" rel="noopener noreferrer">عرض الشهادة</a>',
-                        'عمليات وإدارة الأمن – <a href="https://www.credly.com/badges/9bfbb857-858a-442a-ae54-8bad6d727959" target="_blank" rel="noopener noreferrer">عرض الشهادة</a>',
-                        'أمن النظام والشبكة – <a href="https://www.credly.com/badges/30782fcc-c1bf-48f5-b4d4-46a6943d0062" target="_blank" rel="noopener noreferrer">عرض الشهادة</a>',
-                        'إدارة الثغرات الأمنية – <a href="https://www.credly.com/badges/3ad14b8b-09b0-4cd4-9216-8b4d9791cfb8" target="_blank" rel="noopener noreferrer">عرض الشهادة</a>',
-                        'أساسيات تطوير الويب – <a href="https://www.credly.com/badges/f0aeb9c2-fc79-4a5d-abad-504725769d6b" target="_blank" rel="noopener noreferrer">عرض الشهادة</a>',
-                    ],
-                    experienceTitle: "خبراتي",
-                    experienceHeader: 'تدريب في قسم تقنية المعلومات بالبنية الرقمية بأمانة منطقة عسير – <a href="https://drive.google.com/drive/folders/1sZsEu1suHLbzWc87aJNa1PJ-C5OFAarA?usp=drive_link" target="_blank" rel="noopener noreferrer">عرض شهادة التدريب</a>',
-                    experienceOrg: '',
-                    experienceItems: [
-                        "قدمت دعم فني من خلال تشخيص وحل مشكلات الأجهزة والبرمجيات.",
-                        "ساعدت في إعداد الخوادم وتحسين الشبكات باستخدام منصات Makeen و Qdisk.",
-                        "تعاونت مع فرق تقنية المعلومات واكتسبت خبرة في بيئة الدعم الفني."
-                    ],
-                    projectsTitle: "مشاريعي",
-                    projectHeader: 'مشروع التخرج – Agri Zone: منصة إلكترونية زراعية – <a href="https://drive.google.com/drive/folders/1Hp3tQI6eH_mcMrHfo5HHYyccWBPQfkdK?usp=drive_link" target="_blank" rel="noopener noreferrer">عرض الملفات</a>',
-                    projectItems: [
-                        "طورت وصممت منصة كاملة تربط المزارعين بالمستهلكين مباشرة.",
-                        "بنيت الواجهة الأمامية (HTML, CSS, JavaScript) والخلفية (PHP, MySQL).",
-                        "أدرت مهام الفريق والجدول الزمني باستخدام Project Libre.",
-                        "النتيجة: حصلت على درجة ممتاز (A+, 100%).",
-                    ],
-                    languageSwitch: "English"
+                    title: "متخصص نظم معلومات",
+                    phone: 'الهاتف: <a href="tel:+966566833453">0566833453</a>',
+                    email: 'البريد: <a href="mailto:mbnq1@outlook.com">mbnq1@outlook.com</a>',
+                    linkedin: 'لينكد إن: <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">Linkedin.com</a>',
+                    summaryTitle: "الملخص الاحترافي",
+                    summaryText: "متخصص في نظم المعلومات بخبرة في تطوير الويب، تحليل البيانات، الأمن السيبراني، الدعم الفني، وإدارة النظم. قمت بتطوير منصة تجارة إلكترونية زراعية تربط المزارعين مباشرة بالمستهلكين. أمتلك مهارة في استكشاف الأخطاء وإصلاحها، صيانة الأنظمة، وإدارة الشبكات، مع التزام قوي بالعمل الجماعي وحل المشكلات والتعلم المستمر.",
+                    experienceTitle: "الخبرة المهنية",
+                    experienceHeader: "متدرب في تقنية المعلومات - البنية التحتية الرقمية، أمانة منطقة عسير (يونيو 2024 - أغسطس 2024)",
+                    experienceItems: ["قدمت الدعم الفني وقمت بحل مشكلات الأجهزة والبرامج، مما ساهم في تقليل وقت التوقف عن العمل.", "ساعدت في إعداد الخوادم وتحسين أداء الشبكة بالتعاون مع فرق تقنية المعلومات.", "حللت بيانات الحوادث لتحديد المشكلات المتكررة وتحسين الأداء العام للنظام.", "دعمت عمليات الأمن السيبراني من خلال مراقبة الأنظمة وتحديد التهديدات المحتملة."],
+                    educationTitle: "التعليم",
+                    educationText: "<strong>بكالوريوس في نظم المعلومات</strong>، كلية علوم الحاسب، جامعة الملك خالد، أبها.",
+                    educationProject: ["<strong>مشروع التخرج:</strong> تطوير منصة تجارة إلكترونية زراعية متكاملة تربط المزارعين مباشرة بالمستهلكين."],
+                    certificationsTitle: "الشهادات",
+                    certifications: ["شهادة IBM الاحترافية في الأمن السيبراني", "الحوكمة والمخاطر والامتثال وخصوصية البيانات", "إدارة الثغرات الأمنية", "أمن النظم والشبكات", "أمن السحابة", "عمليات وإدارة الأمن", "الاستجابة للحوادث وتحليل النظم", "أساسيات تطوير الويب", "أساسيات البيانات"],
+                    skillsTitle: "المهارات",
+                    softSkillsTitle: "مهارات شخصية",
+                    softSkills: ["التواصل الفعال", "العمل الجماعي", "حل المشكلات", "القدرة على التكيف", "إدارة الوقت"],
+                    techSkillsTitle: "مهارات تقنية",
+                    techSkills: ["HTML", "CSS", "JavaScript", "PHP", "SQL", "Windows", "Kali Linux", "تصميم وإدارة قواعد البيانات", "تنظيف وتصور البيانات", "استضافة الويب", "إعداد الشبكات", "تصميم الجرافيك", "تصميم الإعلانات"],
+                    profSkillsTitle: "مهارات احترافية",
+                    profSkills: ["مايكروسوفت أوفيس (Excel, Word, PowerPoint)", "كتابة وتحليل التقارير", "إدارة المشاريع", "تطوير الحلول التقنية"],
+                    languagesTitle: "اللغات",
+                    languages: ["العربية: اللغة الأم", "الإنجليزية: إتقان مهني"],
+                    langButton: "English",
+                    printButton: "طباعة 🖨️"
                 },
-                en: { // النصوص باللغة الإنجليزية
+                en: {
                     name: "Mohammed Nawaf",
-                    title: "Information Systems | Cybersecurity Specialist",
-                    phoneText: 'Phone: <a href="tel:+966566833453">+966 566 833 453</a>',
-                    whatsappText: 'WhatsApp: <a href="https://wa.me/966566833453" target="_blank" rel="noopener noreferrer">+966 566 833 453</a>',
-                    linkedinText: 'LinkedIn: <a href="https://www.linkedin.com/in/%D9%85%D8%AD%D9%85%D8%AF-%D8%A8%D9%86-%D9%86%D9%88%D8%A7%D9%81-ba0aaa33a/" target="_blank" rel="noopener noreferrer">linkedin.com</a>',
-                    emailText: 'Email: <a href="mailto:mbnq1@outlook.com">mbnq1@outlook.com</a>',
-                    summaryTitle: "About Me",
-                    summaryText: "I hold a Bachelor's degree in Information Systems with hands-on experience in web development, IT support, and system administration. I participated in an innovative project connecting farmers with customers, which helped me develop effective teamwork, task organization, and technical problem-solving skills. I am always eager to enhance my abilities and achieve optimal results in advanced technical environments.",
+                    title: "Information Systems Specialist",
+                    nationality: "Nationality: Saudi",
+                    phone: 'Phone: <a href="tel:+966566833453">0566833453</a>',
+                    email: 'Email: <a href="mailto:mbnq1@outlook.com">mbnq1@outlook.com</a>',
+                    linkedin: 'LinkedIn: <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">Linkedin.com</a>',
+                    summaryTitle: "Professional Summary",
+                    summaryText: "Information Systems Specialist with experience in web development, data analysis, cybersecurity, IT support, and system administration. I developed an agricultural e-commerce platform that connects farmers directly with consumers. Skilled in troubleshooting, system maintenance, and network management, with a strong commitment to teamwork, problem-solving, and continuous learning.",
+                    experienceTitle: "Professional Experience",
+                    experienceHeader: "IT Intern - Digital Infrastructure, Aseer Municipality (June 2024 – August 2024)",
+                    experienceItems: ["Provided technical support and resolved hardware and software issues, reducing downtime.", "Assisted in server setup and improved network performance in collaboration with IT teams.", "Analyzed incident data to identify recurring issues and enhance overall system performance.", "Supported cybersecurity operations by monitoring systems and identifying potential threats."],
                     educationTitle: "Education",
-                    educationText: "<strong>Bachelor’s in Information Systems</strong><br>College of Computer Science, King Khalid University, Abha.",
-                    certificationsTitle: "Certifications and Courses",
-                    certifications: [
-                        'IBM Cybersecurity Professional Certificate – <a href="https://www.credly.com/badges/924379c5-e2d9-48ad-8a89-c1a71818ff1c" target="_blank" rel="noopener noreferrer">View Certificate</a>',
-                        'Data Fundamentals – <a href="https://www.credly.com/badges/6d783277-d59b-4e74-b68c-e37685ad998f" target="_blank" rel="noopener noreferrer">View Certificate</a>',
-                        'Cloud Security – <a href="https://www.credly.com/badges/58760621-df8f-45a0-af13-657126af68f2" target="_blank" rel="noopener noreferrer">View Certificate</a>',
-                        'Governance, Risk, Compliance, and Data Privacy – <a href="https://www.credly.com/badges/01b0e379-ba8d-4fec-b074-2a39f1b38563" target="_blank" rel="noopener noreferrer">View Certificate</a>',
-                        'Incident Response and Systems Forensics – <a href="https://www.credly.com/badges/8e04163c-9a8d-49d5-9bd1-90212f16278b" target="_blank" rel="noopener noreferrer">View Certificate</a>',
-                        'Security Operations and Management – <a href="https://www.credly.com/badges/9bfbb857-858a-442a-ae54-8bad6d727959" target="_blank" rel="noopener noreferrer">View Certificate</a>',
-                        'System and Network Security – <a href="https://www.credly.com/badges/30782fcc-c1bf-48f5-b4d4-46a6943d0062" target="_blank" rel="noopener noreferrer">View Certificate</a>',
-                        'Vulnerability Management – <a href="https://www.credly.com/badges/3ad14b8b-09b0-4cd4-9216-8b4d9791cfb8" target="_blank" rel="noopener noreferrer">View Certificate</a>',
-                        'Web Development Fundamentals – <a href="https://www.credly.com/badges/f0aeb9c2-fc79-4a5d-abad-504725769d6b" target="_blank" rel="noopener noreferrer">View Certificate</a>',
-                    ],
-                    experienceTitle: "Experience",
-                    experienceHeader: "IT Internship, Digital Infrastructure Department at Amanah Asir Municipality",
-                    experienceOrg: '<a href="https://drive.google.com/drive/folders/1sZsEu1suHLbzWc87aJNa1PJ-C5OFAarA?usp=drive_link" target="_blank" rel="noopener noreferrer">View Internship Certificate</a>',
-                    experienceItems: [
-                        "Provided technical support by diagnosing and resolving hardware and software issues.",
-                        "Assisted in server setup and network optimization using Makeen and Qdisk platforms.",
-                        "Collaborated with IT teams and gained experience in a technical support environment."
-                    ],
-                    projectsTitle: "Projects",
-                    projectHeader: "Graduation Project – Agri Zone: Agricultural E-Commerce Platform – <a href=\"https://drive.google.com/drive/folders/1Awg4Qz4o-EyDskIQMQ4urc5YpivzMlOz?usp=drive_link\" target=\"_blank\" rel=\"noopener noreferrer\">View Files</a>",
-                    projectItems: [
-                        "Developed and designed a full-stack platform connecting farmers directly with consumers.",
-                        "Built the front-end (HTML, CSS, JavaScript) and back-end (PHP, MySQL).",
-                        "Managed team tasks and project schedules using Project Libre.",
-                        "Result: Achieved an excellent grade (A+, 100%)."
-                    ],
-                    languageSwitch: "العربية"
+                    educationText: "<strong>Bachelor’s Degree in Information Systems</strong>, College of Computer Science, King Khalid University, Abha.",
+                    educationProject: ["<strong>Graduation Project:</strong> Developed an integrated agricultural e-commerce platform connecting farmers directly with consumers."],
+                    certificationsTitle: "Certifications",
+                    certifications: ["IBM Cybersecurity Professional Certificate", "Governance, Risk, Compliance, and Data Privacy", "Vulnerability Management", "System and Network Security", "Cloud Security", "Security Operations and Management", "Incident Response and Systems Forensics", "Web Development Fundamentals", "Data Fundamentals"],
+                    skillsTitle: "Skills",
+                    softSkillsTitle: "Soft Skills",
+                    softSkills: ["Effective Communication", "Teamwork", "Problem-Solving", "Adaptability", "Time Management"],
+                    techSkillsTitle: "Technical Skills",
+                    techSkills: ["HTML", "CSS", "JavaScript", "PHP", "SQL", "Windows", "Kali Linux", "Database Design and Management", "Data Cleaning", "Data Visualization", "Web Hosting", "Network Setup", "Graphic Design", "Advertising Design"],
+                    profSkillsTitle: "Professional Skills",
+                    profSkills: ["Microsoft Office (Excel, Word, PowerPoint)", "Report Writing and Analysis", "Project Management", "Developing Technical Solutions"],
+                    languagesTitle: "Languages",
+                    languages: ["Arabic: Native", "English: Proficient"],
+                    langButton: "العربية",
+                    printButton: "Print 🖨️"
                 }
             };
 
-            // 2. تحديد العناصر التي سيتم تحديثها
             const elements = {
                 html: document.documentElement,
                 langButton: document.getElementById("lang-button"),
+                printButton: document.getElementById("print-button"),
                 name: document.getElementById("name"),
                 title: document.getElementById("title"),
+                nationality: document.getElementById("nationality"),
                 phone: document.getElementById("phone"),
-                whatsapp: document.getElementById("whatsapp"),
-                linkedin: document.getElementById("linkedin"),
                 email: document.getElementById("email"),
+                linkedin: document.getElementById("linkedin"),
                 summaryTitle: document.getElementById("summary-title"),
                 summaryText: document.getElementById("summary-text"),
-                educationTitle: document.getElementById("education-title"),
-                educationText: document.getElementById("education-text"),
-                certificationsTitle: document.getElementById("certifications-title"),
-                certificationsList: document.getElementById("certifications-list"),
                 experienceTitle: document.getElementById("experience-title"),
                 experienceHeader: document.getElementById("experience-header"),
-                experienceOrg: document.getElementById("experience-org"),
                 experienceList: document.getElementById("experience-list"),
-                projectsTitle: document.getElementById("projects-title"),
-                projectHeader: document.getElementById("project-header"),
-                projectList: document.getElementById("project-list"),
+                educationTitle: document.getElementById("education-title"),
+                educationText: document.getElementById("education-text"),
+                educationList: document.getElementById("education-list"),
+                certificationsTitle: document.getElementById("certifications-title"),
+                certificationsList: document.getElementById("certifications-list"),
+                skillsTitle: document.getElementById("skills-title"),
+                softSkillsTitle: document.getElementById("soft-skills-title"),
+                softSkillsList: document.getElementById("soft-skills-list"),
+                techSkillsTitle: document.getElementById("tech-skills-title"),
+                techSkillsList: document.getElementById("tech-skills-list"),
+                profSkillsTitle: document.getElementById("prof-skills-title"),
+                profSkillsList: document.getElementById("prof-skills-list"),
+                languagesTitle: document.getElementById("languages-title"),
+                languagesList: document.getElementById("languages-list"),
                 footerText: document.getElementById("footer-text")
             };
 
-            // 3. دالة لتعبئة القوائم (الشهادات، الخبرات، المشاريع)
-            const populateList = (element, items) => {
-                element.innerHTML = ""; // إفراغ القائمة أولاً
+            const populateList = (element, items, useInnerHTML = false) => {
+                element.innerHTML = "";
                 items.forEach(item => {
                     const li = document.createElement("li");
-                    li.innerHTML = item;
+                    if (useInnerHTML) {
+                        li.innerHTML = item;
+                    } else {
+                        li.textContent = item;
+                    }
                     element.appendChild(li);
                 });
             };
             
-            // 4. دالة لتطبيق اللغة
             const applyLanguage = (lang) => {
                 const t = translations[lang];
                 if (!t) return;
 
-                // تحديث اتجاه ولغة الصفحة
                 elements.html.lang = lang;
                 elements.html.dir = lang === "ar" ? "rtl" : "ltr";
 
-                // تحديث النصوص
-                elements.name.textContent = t.name;
-                elements.title.textContent = t.title;
-                elements.phone.innerHTML = t.phoneText;
-                elements.whatsapp.innerHTML = t.whatsappText;
-                elements.linkedin.innerHTML = t.linkedinText;
-                elements.email.innerHTML = t.emailText;
-                elements.summaryTitle.textContent = t.summaryTitle;
-                elements.summaryText.textContent = t.summaryText;
-                elements.educationTitle.textContent = t.educationTitle;
-                elements.educationText.innerHTML = t.educationText;
-                elements.certificationsTitle.textContent = t.certificationsTitle;
-                elements.experienceTitle.textContent = t.experienceTitle;
-                elements.experienceHeader.innerHTML = t.experienceHeader;
-                elements.experienceOrg.innerHTML = t.experienceOrg;
-                elements.projectsTitle.textContent = t.projectsTitle;
-                elements.projectHeader.innerHTML = t.projectHeader;
-                elements.langButton.textContent = t.languageSwitch;
+                // Update text content
+                Object.keys(t).forEach(key => {
+                    if (elements[key] && typeof t[key] === 'string') {
+                        if (['phone', 'email', 'linkedin', 'educationText'].includes(key)) {
+                            elements[key].innerHTML = t[key];
+                        } else {
+                            elements[key].textContent = t[key];
+                        }
+                    }
+                });
 
-                // تعبئة القوائم
-                populateList(elements.certificationsList, t.certifications);
+                // Populate lists
                 populateList(elements.experienceList, t.experienceItems);
-                populateList(elements.projectList, t.projectItems);
+                populateList(elements.educationList, t.educationProject, true);
+                populateList(elements.certificationsList, t.certifications);
+                populateList(elements.softSkillsList, t.softSkills);
+                populateList(elements.techSkillsList, t.techSkills);
+                populateList(elements.profSkillsList, t.profSkills);
+                populateList(elements.languagesList, t.languages);
 
-                // تحديث نص التذييل
+                // Update footer
                 const year = new Date().getFullYear();
-                elements.footerText.textContent = lang === "ar" ?
-                    `© ${year} صنع بواسطة محمد نواف` :
-                    `© ${year} Made by Mohammed Nawaf`;
+                elements.footerText.textContent = lang === "ar" ? `© ${year} صنع بواسطة محمد نواف` : `© ${year} Made by Mohammed Nawaf`;
             };
             
-            // 5. دالة لتبديل اللغة
             const switchLanguage = () => {
                 const currentLang = localStorage.getItem("lang") || "ar";
                 const newLang = currentLang === "ar" ? "en" : "ar";
                 localStorage.setItem("lang", newLang);
                 applyLanguage(newLang);
             };
-
-            // 6. ربط الحدث بالزر
+            
+            // Event Listeners
             elements.langButton.addEventListener("click", switchLanguage);
+            elements.printButton.addEventListener("click", () => window.print());
 
-            // 7. تطبيق اللغة الحالية عند تحميل الصفحة
+            // Initial Load
             const initialLang = localStorage.getItem("lang") || "ar";
             applyLanguage(initialLang);
         });
     </script>
 </body>
 </html>
-
